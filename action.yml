@@ -1,0 +1,28 @@
+# action.yml
+name: 'Sync Code'
+description: 'Sync between alicode and github'
+inputs:
+  git_remote:  # id of input
+    description: 'git url of remote repo'
+    required: true
+    default: ''
+  git_remote_key:  # id of input
+    description: 'key of remote repo'
+    required: true
+    default: ''
+outputs:
+  succeed: 
+    description: 'sync result'
+  message: 
+    description: 'action message'
+  return_code: 
+    description: 'return_code'
+  run_log: 
+    description: 'run_log'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.git_remote }}  
+    - ${{ inputs.git_remote_key }}
+ 
