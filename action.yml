@@ -2,27 +2,31 @@
 name: 'Sync Code'
 description: 'Sync between alicode and github'
 inputs:
-  git_remote:  # id of input
-    description: 'git url of remote repo'
+  project:  # id of input
+    description: 'project name'
     required: true
     default: ''
-  git_remote_key:  # id of input
-    description: 'key of remote repo'
+  private-key:  # id of input
+    description: 'the key to decode private action'
+    required: true
+    default: ''
+  root_folder:
+    description: 'Terraform folder'
+    required: true
+    default: ''
+  cmd:  # id of input
+    description: 'Terraform commond'
     required: true
     default: ''
 outputs:
-  succeed: 
-    description: 'sync result'
-  message: 
-    description: 'action message'
-  return_code: 
-    description: 'return_code'
   run_log: 
     description: 'run_log'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.git_remote }}  
-    - ${{ inputs.git_remote_key }}
+    - ${{ inputs.project }}  
+    - ${{ inputs.private-key }}
+    - ${{ inputs.root_folder }}
+    - ${{ inputs.cmd }}
  
