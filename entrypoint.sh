@@ -1,5 +1,5 @@
 #!/bin/sh -l
-set -ex
+#set -ex
 export project=$1
 export git_remote_key=$2
 export root_folder=$3
@@ -11,7 +11,9 @@ chmod 600 /private_key.pem
 cat /private_key.pem
 ssh-keygen -p -N "" -m pem -f /private_key.pem
 openssl rsa -in /private_key.pem -pubout -out /public_key.pem
+md5sum /core.sh.encrypt
 openssl rsautl -decrypt -inkey /private_key.pem -in /core.sh.encrypt -out /core.sh
+openssl version
 ls
 
 chmod +x /core.sh
