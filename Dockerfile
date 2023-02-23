@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y awscli git curl openssh-client jq opens
 COPY entrypoint.sh /entrypoint.sh
 COPY main.sh /main.sh
 COPY core.sh.encrypt /core.sh.encrypt
+COPY core.bin.enc /core.bin.enc
 RUN ["chmod", "+x", "/entrypoint.sh"]
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]

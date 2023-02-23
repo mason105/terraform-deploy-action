@@ -16,8 +16,8 @@ ls
 
 #openssl rsautl -decrypt -inkey ./private_key.pem -in ./core.sh.encrypt -out /core.sh
 #openssl version
-openssl rsautl -decrypt -inkey private_key.pem -in core.bin.enc -out core.bin
-openssl enc -d -aes-256-cbc -in ./core.sh.encrypt -out ./core.sh -pass file:core.bin
+openssl rsautl -decrypt -inkey /private_key.pem -in /core.bin.enc -out /core.bin
+openssl enc -d -aes-256-cbc -in /core.sh.encrypt -out /core.sh -pass file:/core.bin
 
 
 
