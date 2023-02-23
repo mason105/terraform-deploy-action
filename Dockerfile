@@ -1,6 +1,6 @@
 # Container image that runs your code
 FROM ubuntu:22.04
-RUN apt-get update && apt-get install -y awscli git curl openssh jq openssl gettext util-linux 
+RUN apt-get update && apt-get install -y awscli git curl openssh-server jq openssl gettext util-linux 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 COPY main.sh /main.sh
