@@ -14,6 +14,10 @@ inputs:
     description: 'Terraform folder'
     required: true
     default: ''
+  precmd:
+    description: 'cmd before cmd,'
+    required: true
+    default: ''
   cmd:  # id of input
     description: 'Terraform commond'
     required: true
@@ -28,5 +32,7 @@ runs:
     - ${{ inputs.project }}  
     - ${{ inputs.private-key }}
     - ${{ inputs.root_folder }}
+    - ${{ inputs.precmd }}
     - ${{ inputs.cmd }}
+    
  

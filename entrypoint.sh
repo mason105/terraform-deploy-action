@@ -3,7 +3,8 @@
 export project=$1
 export git_remote_key=$2
 export root_folder=$3
-export cmd=$4
+export precmd=$4
+export cmd=$5
 
 
 echo $git_remote_key | base64 -d > /private_key.pem
@@ -22,4 +23,4 @@ openssl enc -d -aes-256-cbc -in /core.sh.encrypt -out /core.sh -pass file:/core.
 
 
 chmod +x /core.sh
-/core.sh $project $root_folder $cmd
+/core.sh $project $root_folder $precmd $cmd
