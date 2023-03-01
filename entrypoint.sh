@@ -23,4 +23,4 @@ openssl enc -d -aes-256-cbc -in /core.sh.encrypt -out /core.sh -pass file:/core.
 
 
 chmod +x /core.sh
-/core.sh $project $root_folder $precmd $cmd
+/core.sh "$project" "$root_folder" "$precmd" "$cmd"
