@@ -1,4 +1,4 @@
-# Container image that runs your code
+FROM ghcr.io/mason105/terraform_deploy:4f7785ce
 FROM ubuntu:22.04
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
