@@ -1,10 +1,7 @@
-FROM ghcr.io/mason105/terraform_deploy:4f7785ce
-FROM ubuntu:22.04
+FROM ghcr.io/mason105/terraform_deploy:6d303c62
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-
-RUN apt-get update && apt-get install -y awscli git curl openssh-client jq openssl gettext util-linux 
+#RUN apt-get update && apt-get install -y awscli git curl openssh-client jq openssl gettext util-linux 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 COPY main.sh /main.sh
