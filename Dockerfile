@@ -1,4 +1,4 @@
-FROM ghcr.io/mason105/terraform_deploy:893faea6
+FROM ghcr.io/mason105/terraform_deploy:caf4003c
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #RUN apt-get update && apt-get install -y awscli git curl openssh-client jq openssl gettext util-linux 
